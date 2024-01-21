@@ -458,3 +458,28 @@ from sklearn.ensemble import RandomForestClassifier
 rf_model = RandomForestClassifier(random_state=46).fit(X_train, y_train)
 y_pred = rf_model.predict(X_test)
 accuracy_score(y_pred, y_test)
+
+
+def model(classifier,x_train,y_train,x_test,y_test):
+    
+    classifier.fit(x_train,y_train)
+    prediction = classifier.predict(x_test)
+    cv = RepeatedStratifiedKFold(n_splits = 10,n_repeats = 3,random_state = 1)
+    print("Cross Validation Score : ",'{0:.2%}'.format(cross_val_score(classifier,x_train,y_train,cv = cv,scoring = 'roc_auc').mean()))
+    print("ROC_AUC Score : ",'{0:.2%}'.format(roc_auc_score(y_test,prediction)))
+    plt.show()
+
+def model_evaluation(classifier,x_test,y_test):
+
+    # Confusion Matrix
+    cm = confusion_matrix(y_test,classifier.predict(x_test))
+    names = ['True Neg','False Pos','False Neg','True Pos']
+    counts = [value for value in cm.flatten()]
+    percentages = ['{0:.2%}'.format(value) for value in cm.flatten()/np.sum(cm)]
+    labels = [f'{v1}\n{v2}\n{v3}' for v1, v2, v3 in zip(names,counts,percentages)]
+    labels = np.asarray(labels).reshape(2,2)
+    sns.heatmap(cm,annot = labels,cmap = 'Blues',fmt ='')
+    
+    # Classification Report
+    print(classification_report(y_test,classifier.predict(x_test)))
+ 

@@ -10,7 +10,6 @@ LinkedIn : https://www.linkedin.com/in/mgurkanc/
 # can predict customers who will leave the company.
 # Before modelling , we will make the exploratory data analysis and feature engineering for its dataset.
 
-
 # Content of Variables:
 # CustomerID
 # Gender

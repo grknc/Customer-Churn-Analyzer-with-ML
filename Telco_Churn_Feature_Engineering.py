@@ -409,8 +409,6 @@ df.loc[((df['gender'] == 1) & (df["InternetService"]== "DSL") & ((df["OnlineSecu
 
 df.groupby("INT_SEC_SERV_GENDER").agg({"Churn": ["mean","count"]})
 
-
-
 ###############################################
 # * 2.3.Processing Encoding and One-Hot Encoding
 ###############################################
@@ -437,7 +435,6 @@ def one_hot_encoder(dataframe, categorical_cols, drop_first=True):
 ohe_cols = [col for col in df.columns if 30 >= df[col].nunique() > 2]
 
 df = one_hot_encoder(df, ohe_cols)
-
 df.head()
 
 ###############################################

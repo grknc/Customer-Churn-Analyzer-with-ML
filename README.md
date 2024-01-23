@@ -1,5 +1,7 @@
 # Telco Churn Analysis and Modeling
 
+![Telco Churn Analysis Visualization](https://media.licdn.com/dms/image/D4D12AQHehFjrFpLb-A/article-cover_image-shrink_600_2000/0/1692565495463?e=2147483647&v=beta&t=F8D7OMubiV8KRptPaN-v1UnoGMcsSOEop8RhEKXirTk)
+
 ## About the Project
 Telco Churn Analysis is a project that analyzes and predicts customer churn rates in the telecommunications sector. This project aims to understand churn tendencies using customer data and develop strategies to prevent them.
 
@@ -17,17 +19,17 @@ pip install -r requirements.txt
 ## Usage
 Follow these steps to use the project:
 
-- Run Scripts
+### Run Scripts
 Navigate to the src folder and execute the scripts found there.
 
-- Examine Analysis Results
+### Examine Analysis Results
 Open and run the Jupyter notebooks located in the notebooks folder. These notebooks include topics such as:
 
 * Advanced Exploratory Data Analysis
 * Feature Engineering
-* Tree-Based Modeling
+* Machine Learning Modelling (Specifically, in the ML part, XGBoost, LightGBM, RandomForest, DecisionTreeClassifier, and Stacking Classifier were implemented)
 
-- Data Sets
+### Data Sets
 Data sets used in this project are located in the data folder.
 
 ## Contribution
